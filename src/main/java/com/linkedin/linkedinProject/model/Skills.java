@@ -1,5 +1,7 @@
 package com.linkedin.linkedinProject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +13,11 @@ public class Skills {
     private int skillId;
     private String skill;
 
+    @ManyToOne
+    @JoinColumn(name = "sid", referencedColumnName = "id")
+
+    private Login user;
+
     public Skills() {
     }
 
@@ -19,7 +26,13 @@ public class Skills {
         this.skill=skill;
     }
 
-    public int getSkillId() {
+    public Skills(Login login, String skill2) {
+		// TODO Auto-generated constructor stub
+    	user = login;
+    	skill = skill2;
+	}
+
+	public int getSkillId() {
         return skillId;
     }
 
