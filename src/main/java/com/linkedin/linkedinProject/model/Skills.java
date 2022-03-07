@@ -1,6 +1,5 @@
 package com.linkedin.linkedinProject.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 

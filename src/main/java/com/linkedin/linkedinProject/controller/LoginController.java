@@ -3,15 +3,14 @@ package com.linkedin.linkedinProject.controller;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+
 import org.springframework.web.bind.annotation.*;
 
 import com.linkedin.linkedinProject.model.Login;
 import com.linkedin.linkedinProject.repository.LoginRepository;
 import com.linkedin.linkedinProject.service.LoginService;
 
-//import com.linkedin.linkedinProject.service.LoginService;
+
 
 @RestController
 public class LoginController {
@@ -31,11 +30,10 @@ public class LoginController {
 		if(t != null && !"".equals(t)) {
 			Login userObj = service.fetchByEmailId(t);
 			if(userObj != null) {
-				throw new Exception("user with  is already exists");
+				throw new Exception("user with is already exists");
 			}
 		}
 		service.saveMyUser(user);
-	   // return "Hello "+user.getEmailId()+"password is "+user.getPassword();
 	    
 	}
 

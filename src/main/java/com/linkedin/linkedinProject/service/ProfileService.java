@@ -24,13 +24,13 @@ public class ProfileService {
 		this.repo = repo;
 	}
 
-	public Profile saveMyProfile(int id, String name, String title, String about, String location) {
+	public Profile saveMyProfile(int id, String name, String title, String about, String location, Long phoneNo, String emailId) {
 		
 		if(loginRepository.existsById(id)) {
 			
 			Login login = loginRepository.findById(id).orElse(null);
 			
-			Profile p = new Profile(name, title, about, location, login);
+			Profile p = new Profile(name, title, about, location, login,  phoneNo, emailId);
 			
 			repo.save(p);
 			return repo.findByUserAndName(login, name);
@@ -39,13 +39,15 @@ public class ProfileService {
 			return null;
 	}
 	
-	public Profile updateMyProfile(int id, String name, String title, String about, String location) {
+	public Profile updateMyProfile(int id, String name, String title, String about, String location, Long phoneNo, String emailId) {
 		Optional<Login> user = loginRepository.findById(id);
 		Profile p = repo.findByUser(user);
 		p.setName(name);
 		p.setTitle(title);
 		p.setAbout(about);
 		p.setLocation(location);
+		p.setPhoneNo(phoneNo);
+		p.setEmailId(emailId);
 		repo.save(p);
 		return repo.findByUser(user);
 	}

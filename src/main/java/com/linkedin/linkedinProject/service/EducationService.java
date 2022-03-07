@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.Optional;
+
 
 @Service
 public class EducationService {
@@ -74,5 +74,9 @@ public class EducationService {
     	Login login = loginRepository.findById(id).orElse(null);
     	return repo.findByUser(login);
     }
-   
+
+    public Education disEduById(int id, int eid) {
+		Login login = loginRepository.findById(id).orElse(null);
+		return repo.findByUserAndEduId(login, eid);
+    }
 }

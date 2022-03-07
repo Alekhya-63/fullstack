@@ -27,7 +27,7 @@ public class Experience {
 	private Login user;
 
 	
-	protected Experience() {
+	public Experience() {
 		
 	}
 	

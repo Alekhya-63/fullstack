@@ -24,7 +24,9 @@ public class Profile {
 	private String title;
 	private String about;
 	private String location;
-	
+	private Long phoneNo;
+	private String emailId;
+
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="uid", referencedColumnName = "id")
 	@JsonIgnore
@@ -66,22 +68,45 @@ public class Profile {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public Profile(int pid, String name, String title, String about, String location) {
+
+	public Long getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(Long phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public Profile(int pid, String name, String title, String about, String location, Long phoneNo, String emailId) {
 		super();
 		this.pid = pid;
 		this.name = name;
 		this.title = title;
 		this.about = about;
 		this.location = location;
+		this.phoneNo = phoneNo;
+		this.emailId = emailId;
 	}
-	public Profile(String name, String title, String about, String location, Login user) {
+	public Profile(String name, String title, String about, String location, Login user, Long phoneNo, String emailId) {
 		super();
 		this.name = name;
 		this.title = title;
 		this.about = about;
 		this.location = location;
 		this.user = user;
+		this.phoneNo = phoneNo;
+		this.emailId = emailId;
 	}
+
+
 	public Profile() {
 		// TODO Auto-generated constructor stub
 	}

@@ -1,7 +1,6 @@
 package com.linkedin.linkedinProject.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 
@@ -35,7 +34,7 @@ public class Education {
     @JsonIgnore
     private Login user;
 
-    protected Education() {
+    public Education() {
     	
     }
     

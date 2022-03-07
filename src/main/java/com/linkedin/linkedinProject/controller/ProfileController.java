@@ -34,7 +34,7 @@ public class ProfileController {
 		 String title = profile.getTitle();
 		 String about = profile.getAbout();
 		 String location = profile.getLocation();
-		 return service.saveMyProfile(id, name, title, about, location);
+		 return service.saveMyProfile(id, name, title, about, location, profile.getPhoneNo(), profile.getEmailId());
 	 }
 	 
 	 @PutMapping("/update-profile/{id}")
@@ -44,7 +44,7 @@ public class ProfileController {
 		 String title = profile.getTitle();
 		 String about = profile.getAbout();
 		 String location = profile.getLocation();
-		 return service.updateMyProfile(id, name, title, about, location);
+		 return service.updateMyProfile(id, name, title, about, location, profile.getPhoneNo(), profile.getEmailId());
 	 }
 	 
 	 @GetMapping("/display-profile/{id}")

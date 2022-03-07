@@ -1,6 +1,5 @@
 package com.linkedin.linkedinProject.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.linkedin.linkedinProject.model.Experience;
 import com.linkedin.linkedinProject.model.Login;
 

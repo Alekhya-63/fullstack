@@ -64,4 +64,9 @@ public class ExperienceService {
     	Login login = loginRepository.findById(id).orElse(null);
     	return repo.findByUser(login);
     }
+
+    public Experience disExpById(int id, int eid) {
+		Login login = loginRepository.findById(id).orElse(null);
+		return repo.findByUserAndExpId(login, eid);
+	}
 }

@@ -4,18 +4,12 @@ import com.linkedin.linkedinProject.model.Education;
 import com.linkedin.linkedinProject.repository.EducationRepository;
 import com.linkedin.linkedinProject.repository.LoginRepository;
 import com.linkedin.linkedinProject.service.EducationService;
-//
-//import src.main.java.com.in28minutes.springboot.web.springbootfirstwebapplication.controller.CustomDateEditor;
-//import src.main.java.com.in28minutes.springboot.web.springbootfirstwebapplication.controller.InitBinder;
-//import src.main.java.com.in28minutes.springboot.web.springbootfirstwebapplication.controller.SimpleDateFormat;
-//import src.main.java.com.in28minutes.springboot.web.springbootfirstwebapplication.controller.WebDataBinder;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.web.bind.WebDataBinder;
+
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 import javax.transaction.Transactional;
@@ -71,12 +65,11 @@ public class EducationController {
     public Education[] displayEdu(@PathVariable int id) {
     	return service.displayEdu(id);
     }
-//
-//    @PostMapping("/delete-edu")
-//    @Transactional
-//    public void deleteEdu(@PathVariable int id)
-//    {
-//        service.deleteEdu(id);
-//
-//    }
+
+    @GetMapping("/display-edu-byId/{id}/{eid}")
+    @Transactional
+    public Education disEduById(@PathVariable int id, @PathVariable int eid){
+        return service.disEduById(id, eid);
+    }
+
 }

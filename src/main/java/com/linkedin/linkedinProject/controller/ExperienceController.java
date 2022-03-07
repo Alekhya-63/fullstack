@@ -57,4 +57,10 @@ public class ExperienceController {
 	public Experience[] displayExp(@PathVariable int id){
 		return service.displayExp(id);
 	}
+
+	@GetMapping("/display-exp-byid/{id}/{eid}")
+	@Transactional
+	public Experience disEXpById(@PathVariable int id, @PathVariable int eid){
+		return service.disExpById(id, eid);
+	}
 }

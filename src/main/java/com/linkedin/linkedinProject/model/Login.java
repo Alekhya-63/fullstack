@@ -19,12 +19,10 @@ public class Login {
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
 	
 	private Profile profile = new Profile();
-	//@JsonIgnore
+
 	@OneToMany(mappedBy = "user")
 	private Set<Skills> Skills = new HashSet<>();
 
-//	@OneToMany(mappedBy = "user")
-//	private Set<Experience> experiences = new HashSet<>();
 
 	public Set<Skills> getSkills() {
 		return Skills;
@@ -34,23 +32,7 @@ public class Login {
 		Skills = skills;
 	}
 
-//	public Set<Education> getEducations() {
-//		return educations;
-//	}
-//
-//	public Set<Experience> getExperiences() {
-//		return experiences;
-//	}
-//
-//	public void setExperiences(Set<Experience> experiences) {
-//		this.experiences = experiences;
-//	}
-//
-//	public void setEducations(Set<Education> educations) {
-//		this.educations = educations;
-//	}
-
-	protected Login() {
+	public Login() {
 		
 	}
 	public Login(int id, String emailId, String password) {
@@ -59,16 +41,7 @@ public class Login {
 		this.emailId = emailId;
 		this.password = password;
 	}
-//	public Login(int id, String emailId, String password, Set<Education> educations,
-//				 Set<Experience> experiences, Set<Skills> skills) {
-//		super();
-//		this.id=id;
-//		this.emailId = emailId;
-//		this.password = password;
-//		this.educations = educations;
-//		this.experiences = experiences;
-//		this.Skills = skills;
-//	}
+
 	public int getId() {
 		return id;
 	}
