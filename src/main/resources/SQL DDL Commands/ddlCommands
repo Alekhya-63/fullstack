@@ -1,0 +1,53 @@
+'CREATE TABLE `login` (
+  `id` int NOT NULL,
+  `email_id` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
+
+'CREATE TABLE `profile` (
+  `pid` int NOT NULL,
+  `about` varchar(255) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `uid` int DEFAULT NULL,
+  `email_id` varchar(255) DEFAULT NULL,
+  `phone_no` bigint DEFAULT NULL,
+  PRIMARY KEY (`pid`),
+  KEY `FKc3aluexjyekvgrvxhd9lk042r` (`uid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
+
+'CREATE TABLE `exp` (
+  `exp_id` int NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `emp_type` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `stop_date` date DEFAULT NULL,
+  `eid` int DEFAULT NULL,
+  PRIMARY KEY (`exp_id`),
+  KEY `FK8a55nx0j5alar3h66xpwgh8un` (`eid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
+
+'CREATE TABLE `edu` (
+  `edu_id` int NOT NULL,
+  `degree` varchar(255) DEFAULT NULL,
+  `edu_name` varchar(255) DEFAULT NULL,
+  `edu_start` date DEFAULT NULL,
+  `edu_stop` date DEFAULT NULL,
+  `field` varchar(255) DEFAULT NULL,
+  `grade` varchar(255) DEFAULT NULL,
+  `eid` int DEFAULT NULL,
+  PRIMARY KEY (`edu_id`),
+  KEY `FKl8v7q2j8ecyj8flwwdyc7p3ps` (`eid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
+
+'CREATE TABLE `skills` (
+  `skill_id` int NOT NULL,
+  `skill` varchar(255) DEFAULT NULL,
+  `sid` int DEFAULT NULL,
+  PRIMARY KEY (`skill_id`),
+  KEY `FKexsqp7oxeabfggnqj5u7o7mk5` (`sid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
